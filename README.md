@@ -1,4 +1,4 @@
-\# BentoML Iris Classification Service
+# BentoML Iris Classification Service
 
 
 
@@ -6,7 +6,7 @@ A beginner-friendly machine learning deployment project built with Python, Sciki
 
 
 
-\## Project Overview
+## Project Overview
 
 
 
@@ -14,23 +14,23 @@ This project demonstrates how to train an Iris classification model, serve predi
 
 
 
-\## Technologies Used
+## Technologies Used
 
 
 
-\- Python
+- Python
 
-\- Scikit-learn
+- Scikit-learn
 
-\- BentoML
+- BentoML
 
-\- Docker
+- Docker
 
-\- NumPy
+- NumPy
 
 
 
-\## Project Structure
+## Project Structure
 
 
 
@@ -58,23 +58,23 @@ MLService/
 
 
 
-\## Features
+## Features
 
 
 
-\- Train an Iris classification model.
+- Train an Iris classification model.
 
-\- Create a prediction API using BentoML.
+- Create a prediction API using BentoML.
 
-\- Package the model service into a Bento.
+- Package the model service into a Bento.
 
-\- Containerize the service with Docker.
+- Containerize the service with Docker.
 
-\- Test predictions through the `/classify` endpoint.
+- Test predictions through the `/classify` endpoint.
 
 
 
-\## Run Locally
+## Run Locally
 
 
 
@@ -114,7 +114,7 @@ python test.py
 
 
 
-\## Build and Run with BentoML and Docker
+## Build and Run with BentoML and Docker
 
 
 
@@ -174,7 +174,7 @@ http://localhost:3000
 
 
 
-\## API Testing
+## API Testing
 
 
 
@@ -214,7 +214,7 @@ The output represents the model's predicted class label for the supplied input.
 
 
 
-\## Learning Outcome
+## Learning Outcome
 
 
 
@@ -226,11 +226,11 @@ This project is part of my ongoing journey in machine learning and MLOps.
 
 
 
-\## Author
+## Author
 
 
 
-Humera Shaikh
+**Humera Shaikh**
 
 
 
