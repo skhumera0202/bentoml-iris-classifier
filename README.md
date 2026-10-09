@@ -78,7 +78,7 @@ MLService/
 
 
 
-Install the dependencies:
+*Install the dependencies:*
 
 
 
@@ -90,7 +90,7 @@ pip install -r requirements.txt
 
 
 
-Train the model:
+*Train the model:*
 
 
 
@@ -102,7 +102,7 @@ python train.py
 
 
 
-Test the model:
+*Test the model:*
 
 
 
@@ -118,7 +118,7 @@ python test.py
 
 
 
-Build the Bento:
+*Build the Bento:*
 
 
 
@@ -130,7 +130,7 @@ bentoml build
 
 
 
-Check the available Bentos:
+*Check the available Bentos:*
 
 
 
@@ -142,7 +142,7 @@ bentoml list
 
 
 
-Containerize your Bento, replacing the tag with the one returned by `bentoml list`:
+*Containerize your Bento, replacing the tag with the one returned by `bentoml list`:*
 
 
 
@@ -154,7 +154,7 @@ bentoml containerize iris\_classifier:YOUR\_TAG
 
 
 
-Run the Docker image, again using your actual tag:
+*Run the Docker image, again using your actual tag:*
 
 
 
@@ -166,7 +166,7 @@ docker run --rm -p 3000:3000 iris\_classifier:YOUR\_TAG
 
 
 
-Open the service documentation:
+*Open the service documentation:*
 
 
 
@@ -178,7 +178,7 @@ http://localhost:3000
 
 
 
-The service exposes a prediction endpoint:
+*The service exposes a prediction endpoint:*
 
 
 
@@ -186,7 +186,7 @@ The service exposes a prediction endpoint:
 
 
 
-Example request body:
+*Example request body:*
 
 
 
@@ -198,7 +198,7 @@ Example request body:
 
 
 
-Example prediction from my test:
+*Example prediction from my test:*
 
 
 
