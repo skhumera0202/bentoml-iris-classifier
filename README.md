@@ -35,6 +35,10 @@ The project is intended as a practical introduction to model serving and MLOps f
 
 ```text
 MLService/
+├── screenshots/
+│   ├── iris-api-prediction.png
+│   ├── iris-api-docs.png
+│   └── iris-docker-container.png
 ├── train.py
 ├── test.py
 ├── service.py
@@ -45,22 +49,21 @@ MLService/
 └── README.md
 ```
 
+
 *The tree above reflects the structure documented for this project. Run commands from the directory containing these files.*
 
 ## ⚙️ Setup
 
 ### 1. Check Python and pip
 
-Install a compatible version of Python and make sure `python` and `pip` are available in your terminal.
-
-```bash
+```powershell
 python --version
 python -m pip --version
 ```
 
 ### 2. Create a virtual environment
 
-```bash
+```powershell
 python -m venv venv
 ```
 
@@ -78,21 +81,50 @@ source venv/bin/activate
 
 ### 3. Install dependencies
 
-```bash
+```powershell
 python -m pip install --upgrade pip
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
-
 ## 🧠 Train the Model
 
 Run the training script:
 
-```bash
+```powershell
 python train.py
 ```
 
-This script trains the Iris classifier. If the service expects a saved model artifact, make sure the training script completes successfully before starting the API.
+The script loads the Iris dataset, trains a Scikit-learn Support Vector Machine (SVM) classifier, and saves the trained model to BentoML's local model store.
 
+Ensure training completes successfully before starting the API.
+
+## 🧪 Test a Prediction
+
+The `POST /classify` endpoint accepts four numeric flower measurements in this order:
+
+1. Sepal length (cm)
+2. Sepal width (cm)
+3. Petal length (cm)
+4. Petal width (cm)
+
+**Example request body:**
+
+```json
+[[5.1, 3.5, 1.4, 0.2]]
+```
+
+**Example response:**
+
+```json
+[0]
+```
+
+The result is a predicted class index:
+
+- `0` — Setosa
+- `1` — Versicolor
+- `2` — Virginica
+
+These labels correspond to the standard Scikit-learn Iris dataset.
 ## 🌐 Start the BentoML API
 
 Run the service from the project directory:
@@ -109,36 +141,6 @@ Use the BentoML API documentation to inspect and try the `POST /classify` endpoi
 
 > If BentoML reports that `service:svc` cannot be found, check that `service.py` defines a service object named `svc` and that the command is being run from the project directory.
 
-## 🧪 Test a Prediction
-
-The endpoint expects four numeric measurements, in this order:
-
-1. Sepal length (cm)
-2. Sepal width (cm)
-3. Petal length (cm)
-4. Petal width (cm)
-
-Example request body:
-
-```json
-[[5.1, 3.5, 1.4, 0.2]]
-```
-
-Example response, as documented for this project:
-
-```json
-[0]
-```
-
-The response is a predicted class index. For the standard Scikit-learn Iris dataset, the indices are `0` = *setosa*, `1` = *versicolor*, and `2` = *virginica*.
-
-You can also run the project's test script, if it is configured to call the service or validate predictions:
-
-```bash
-python test.py
-```
-
-Start the API in a separate terminal before running the test if the test script sends requests to the running service.
 
 ## 🐳 Docker
 
@@ -176,13 +178,13 @@ Replace `<bento-name>:<version>` with the actual tag shown in your terminal. Fol
 
 ### 1. Iris Classification API Prediction
 
-Successful prediction using the BentoML API, returning HTTP 200 and class index `0`.
+The API successfully returns HTTP 200 with prediction class index `0`.
 
 ![Iris API Prediction](screenshots/iris-api-prediction.png)
 
 ### 2. BentoML API Documentation
 
-The API documentation displays the `/classify` endpoint and the input format for making predictions.
+The API documentation displays the `/classify` endpoint and its expected input format.
 
 ![BentoML API Documentation](screenshots/iris-api-docs.png)
 
@@ -191,7 +193,6 @@ The API documentation displays the `/classify` endpoint and the input format for
 Docker Desktop showing the `iris-classifier-demo` container running with port mapping `3000:3000`.
 
 ![Iris Classifier Docker Container](screenshots/iris-docker-container.png)
-
 
 ## 🔗 Repository
 
