@@ -170,6 +170,24 @@ Replace `<bento-name>:<version>` with the actual tag shown in your terminal. Fol
 - Defining and running a BentoML service.
 - Testing an inference endpoint.
 - Understanding the role of Docker in packaging ML applications.
+  
+  
+## 📸 Project Screenshots
+
+### 1. Iris Classification API Prediction
+Demonstrates a successful prediction through the BentoML API.
+
+![Iris API Prediction](screenshots/iris-api-prediction.png)
+
+### 2. BentoML API Documentation
+Shows the `/classify` endpoint and the input format used for predictions.
+
+![BentoML API Documentation](screenshots/iris-api-docs.png)
+
+### 3. Docker Container
+Shows the Iris Classification service running in Docker Desktop.
+
+![Docker Container Running](screenshots/iris-docker-container.png)
 
 ## 🔗 Repository
 
